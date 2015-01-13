@@ -66,3 +66,38 @@ html, body {
   height: auto;
   width: 300px;
 }
+
+.menu-icon {
+  width: auto;
+  height: 100px;
+  padding: 20px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.home-bottom-panel {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  padding: 20px;  
+}
+
+.home-issue-header {
+  text-align: left;
+}
+
+.artist-name {
+  display: inline-block;
+  width: 33%;
+  &:first-of-type {
+    text-align: left;
+  }
+  &:last-of-type {
+    text-align: right;
+  }
+  &:hover {
+    color: white;
+  }
+}
