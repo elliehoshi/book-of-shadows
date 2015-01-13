@@ -1,0 +1,68 @@
+/*-----------------------------------------
+mixins
+-----------------------------------------*/
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+}
+
+/*-----------------------------------------
+Body
+-----------------------------------------*/
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  text-align: center;
+  font-family: 'Karla', sans-serif;
+  font-weight: 400;
+}
+
+.gradient {
+  background: -webkit-linear-gradient(30deg, #54a4db 20%, #ffa3ff 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(30deg, #54a4db 20%, #ffa3ff 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(30deg, #54a4db 20%, #ffa3ff 90%); /* IE10 */
+  background:      -o-linear-gradient(30deg, #54a4db 20%, #ffa3ff 90%); /* Opera 11.10+ */
+  background:         linear-gradient(30deg, #54a4db 20%, #ffa3ff 90%); /* W3C */
+  background-size: 150% 150%;
+  -webkit-animation: GradientAnimation 10s ease alternate infinite;
+  -moz-animation: GradientAnimation 10s ease alternate infinite;
+  -o-animation: GradientAnimation 10s ease alternate infinite;
+  animation: GradientAnimation 10s ease alternate infinite;
+  min-height: 100vh;
+  min-width: 100vw;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+@-webkit-keyframes GradientAnimation {
+    0%{background-position:0% 68%}
+    50%{background-position:100% 33%}
+    100%{background-position:0% 68%}
+}
+@-moz-keyframes GradientAnimation {
+    0%{background-position:0% 68%}
+    50%{background-position:100% 33%}
+    100%{background-position:0% 68%}
+}
+@-o-keyframes GradientAnimation {
+    0%{background-position:0% 68%}
+    50%{background-position:100% 33%}
+    100%{background-position:0% 68%}
+}
+@keyframes GradientAnimation { 
+    0%{background-position:0% 68%}
+    50%{background-position:100% 33%}
+    100%{background-position:0% 68%}
+}
+
+.home-logo {
+  @include vertical-align;
+  height: auto;
+  width: 300px;
+}
