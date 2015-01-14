@@ -74,7 +74,12 @@ html, body {
   position: absolute;
   top: 0px;
   left: 0px;
+  z-index: 1;
+  &.white {
+    margin-left: -20px;
+  }
 }
+
 
 .home-bottom-panel {
   width: 100%;
@@ -99,5 +104,26 @@ html, body {
   }
   &:hover {
     color: white;
+  }
+}
+
+.home-menu {
+  width: 200px;
+  height: auto;
+  padding-bottom: 50px;
+  background-color: black;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: none;
+  color: white;
+  ul {
+    list-style: none;
+    margin-top: 120px;
+    text-align: left;
+    padding-left: 30px;
+    li {
+      margin-top: 20px; 
+    }
   }
 }
