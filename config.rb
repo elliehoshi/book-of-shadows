@@ -28,9 +28,16 @@
 # proxy "/this-page-has-no-template.html", "/template-file.html", :locals => {
 #  :which_fake_page => "Rendering a fake page with a local variable" }
 
+data.zine.issue.each do |issue|
+  artist = issue[:artist]
+  proxy "/artists/#{artist}.html", "/artists/template.html", :locals => { :issue => issue, :artist => artist }, :ignore => true
+end
+
 ###
 # Helpers
 ###
+
+activate :directory_indexes
 
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
