@@ -3,7 +3,7 @@ title: Book of Shadows
 ---
 
 <!-- Add your site or application content here -->
-<div class="gradient">
+<div class="gradient gradient-animate">
   <%= image_tag "img/book-of-shadows-logo-v1.svg", :class => "home-logo"%>
 
   <%= partial "main-nav" %>
@@ -11,7 +11,9 @@ title: Book of Shadows
   <div class="home-bottom-panel">
     <h5 class="home-issue-header">ISSUE 01</h5>
     <% data.zine.artists.each do |artist| %> 
-      <h1 class="artist-name"><%= link_to artist.artist, artist.path %></h1>
+      <div class="artist-name-contain">
+        <h1 class="artist-name"><%= link_to artist.artist.upcase, artist.path %></h1>
+      </div>
     <% end %>
   </div>
 </div>

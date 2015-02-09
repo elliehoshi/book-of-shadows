@@ -26,6 +26,37 @@ mixins
   background:         linear-gradient(90deg, #ffa3ff 10%, #54a4db 90%); /* W3C */
 }
 
+
+.fade-in {
+    -webkit-animation: fadein 1.5s; /* Safari and Chrome */
+       -moz-animation: fadein 1.5s; /* Firefox */
+        -ms-animation: fadein 1.5s; /* Internet Explorer */
+            animation: fadein 1.5s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari and Chrome */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}​
+
 /*-----------------------------------------
 Body
 -----------------------------------------*/
@@ -47,15 +78,18 @@ a {
 .gradient {
   @include home-gradient;
   background-size: 150% 150%;
-  -webkit-animation: GradientAnimation 10s ease alternate infinite;
-  -moz-animation: GradientAnimation 10s ease alternate infinite;
-  -o-animation: GradientAnimation 10s ease alternate infinite;
-  animation: GradientAnimation 10s ease alternate infinite;
   min-height: 100vh;
   min-width: 100vw;
   height: 100%;
   width: 100%;
   position: absolute;
+}
+
+.gradient-animate {
+  -webkit-animation: GradientAnimation 10s ease alternate infinite;
+  -moz-animation: GradientAnimation 10s ease alternate infinite;
+  -o-animation: GradientAnimation 10s ease alternate infinite;
+  animation: GradientAnimation 10s ease alternate infinite;
 }
 
 @-webkit-keyframes GradientAnimation {
@@ -105,14 +139,23 @@ a {
   position: absolute;
   bottom: 0px;
   left: 0px;
-  padding: 20px;  
 }
 
 .home-issue-header {
   text-align: left;
+  padding: 20px; 
 }
 
 .artist-name {
+  display: inline-block;
+  width: auto;
+  padding: 20px; 
+  &:hover {
+    color: white;
+  }
+}
+
+.artist-name-contain {
   display: inline-block;
   width: 33%;
   &:first-of-type {
@@ -120,9 +163,6 @@ a {
   }
   &:last-of-type {
     text-align: right;
-  }
-  &:hover {
-    color: white;
   }
 }
 
@@ -162,17 +202,17 @@ Artists
   }
 }
 
-.sonia {
+.artist-1 {
   background: url("https://ununsplash.imgix.net/photo-1415904663467-dfdc16cae794?q=75&fm=jpg&s=9687915831b6fd40e033578351e1f6d4") no-repeat;
   background-size: cover;
 }
 
-.nikka {
+.artist-2 {
   background: url("https://ununsplash.imgix.net/photo-1415201179613-bd037ff5eb29?q=75&fm=jpg&s=750bf3cbc777d5e274b76dc9d30b4925") no-repeat;
   background-size: cover;
 }
 
-.ronnie {
+.artist-3 {
   background: url("https://ununsplash.imgix.net/photo-1416431168657-a6c4184348ab?q=75&fm=jpg&s=20ba248730c200af0d30c9ba81854867") no-repeat;
   background-size: cover;
 }
