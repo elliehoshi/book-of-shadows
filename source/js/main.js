@@ -1,6 +1,17 @@
 $(document).ready(function(){
+  $('html').click(function() {
+  //Hide the menus if visible
+    if($(".black").css("display", "none")){
+      $(".home-menu").slideUp("slow");
+      $(".black").css("display", "block")  
+    }
+    
 
-  $(".menu-icon").click(function(){
+
+  });
+
+  $(".menu-icon").click(function(event){
+    event.stopPropagation();
     $(".home-menu").slideToggle("slow", function(){
       $(".black").fadeToggle("slow", "linear");
     });
