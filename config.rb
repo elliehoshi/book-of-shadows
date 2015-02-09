@@ -28,9 +28,9 @@
 # proxy "/this-page-has-no-template.html", "/template-file.html", :locals => {
 #  :which_fake_page => "Rendering a fake page with a local variable" }
 
-data.zine.issue.each do |issue|
-  artist = issue[:artist]
-  proxy "/artists/#{artist}.html", "/artists/template.html", :locals => { :issue => issue, :artist => artist }, :ignore => true
+data.zine.artists.each do |artists|
+  artist = artists[:artist]
+  proxy "/artists/#{artist}.html", "/artists/template.html", :locals => { :artists => artists, :artist => artist }, :ignore => true
 end
 
 ###
@@ -71,7 +71,7 @@ configure :build do
   activate :minify_javascript
 
   # Enable cache buster
-  # activate :asset_hash
+  activate :asset_hash
 
   # Use relative URLs
   activate :relative_assets
