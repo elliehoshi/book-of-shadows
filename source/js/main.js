@@ -1,7 +1,9 @@
 $(document).ready(function(){
 
   $(".menu-icon").click(function(){
-    $(".home-menu").slideToggle("slow");
+    $(".home-menu").slideToggle("slow", function(){
+      $(".black").fadeToggle("slow", "linear");
+    });
   });
 
 
