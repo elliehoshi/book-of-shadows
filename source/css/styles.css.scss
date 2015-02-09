@@ -9,6 +9,23 @@ mixins
       transform: translateY(-50%);
 }
 
+@mixin home-gradient {
+  background: -webkit-linear-gradient(30deg, #54a4db 20%, #ffa3ff 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(30deg, #54a4db 20%, #ffa3ff 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(30deg, #54a4db 20%, #ffa3ff 90%); /* IE10 */
+  background:      -o-linear-gradient(30deg, #54a4db 20%, #ffa3ff 90%); /* Opera 11.10+ */
+  background:         linear-gradient(30deg, #54a4db 20%, #ffa3ff 90%); /* W3C */
+}
+
+
+@mixin side-gradient {
+  background: -webkit-linear-gradient(90deg, #ffa3ff 10%, #54a4db 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #ffa3ff 10%, #54a4db 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #ffa3ff 10%, #54a4db 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #ffa3ff 10%, #54a4db 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #ffa3ff 10%, #54a4db 90%); /* W3C */
+}
+
 /*-----------------------------------------
 Body
 -----------------------------------------*/
@@ -28,11 +45,7 @@ a {
 }
 
 .gradient {
-  background: -webkit-linear-gradient(30deg, #54a4db 20%, #ffa3ff 90%); /* Chrome 10+, Saf5.1+ */
-  background:    -moz-linear-gradient(30deg, #54a4db 20%, #ffa3ff 90%); /* FF3.6+ */
-  background:     -ms-linear-gradient(30deg, #54a4db 20%, #ffa3ff 90%); /* IE10 */
-  background:      -o-linear-gradient(30deg, #54a4db 20%, #ffa3ff 90%); /* Opera 11.10+ */
-  background:         linear-gradient(30deg, #54a4db 20%, #ffa3ff 90%); /* W3C */
+  @include home-gradient;
   background-size: 150% 150%;
   -webkit-animation: GradientAnimation 10s ease alternate infinite;
   -moz-animation: GradientAnimation 10s ease alternate infinite;
@@ -167,13 +180,36 @@ Artists
 .artist-header {
   position: absolute;
   bottom: 20px;
-  left: 20px;
+  left: 100px;
 }
 
-.article-text {
-  width: 50%;
-  margin: 0 auto;
-  margin-top: 50px;
-  line-height: 30px;
-  text-align: left;
+.article-body {
+  height: auto;
+  margin-top: 0px;
+  position: relative;
+  .article-text {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    line-height: 30px;
+    text-align: left; 
+    height: auto; 
+  }
+}
+
+.page-next {
+  position: fixed;
+  top: 0px;
+  height: 100vh;
+  min-height: 100px; 
+  width: 75px;
+  opacity: 0.5;
+  @include side-gradient;
+  &.left {
+    left: 0px;
+  }
+  &.right {
+    right: 0px;
+  }
 }
