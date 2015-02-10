@@ -5,9 +5,6 @@ $(document).ready(function(){
       $(".home-menu").slideUp("slow");
       $(".black").css("display", "block")  
     }
-    
-
-
   });
 
   $(".menu-icon").click(function(event){
@@ -49,27 +46,27 @@ $(document).ready(function(){
   );
 });
 
-var homeBgHover = function(){
-  var i,
-  artistName = document.getElementsByClassName("artist-name");
+// var homeBgHover = function(){
+//   var i,
+//   artistName = document.getElementsByClassName("artist-name");
 
-  artistName[0].hover(
-      function(){
-        $(".gradient").addClass("'artist-1");
-      }, function(){
-        $(".gradient").removeClass("'artist-1");
-      }
-    )
+//   artistName[0].hover(
+//       function(){
+//         $(".gradient").addClass("'artist-1");
+//       }, function(){
+//         $(".gradient").removeClass("'artist-1");
+//       }
+//     )
 
-  // console.log(artistName.length);
-  // for(i=0;i<artistName.length-1;i++){
-  //   console.log(i);
-  //   artistName[i].hover(
-  //     function(){
-  //       $(".gradient").addClass("'artist-'+[i]");
-  //     }, function(){
-  //       $(".gradient").removeClass("'artist-'+[i]");
-  //     }
-  //   )
-  // }
-}
+//   console.log(artistName.length);
+//   for(i=0;i<artistName.length-1;i++){
+//     console.log(i);
+//     artistName[i].hover(
+//       function(){
+//         $(".gradient").addClass("'artist-'+[i]");
+//       }, function(){
+//         $(".gradient").removeClass("'artist-'+[i]");
+//       }
+//     )
+//   }
+// }
