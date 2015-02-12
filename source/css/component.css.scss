@@ -2,11 +2,11 @@
 mixins - refactor
 -----------------------------------------*/
 @mixin side-gradient {
-  background: -webkit-linear-gradient(90deg, rgba(255, 163, 255, 0.2) 10%, rgba(0, 85, 178, 0.2) 90%); /* Chrome 10+, Saf5.1+ */
-  background:    -moz-linear-gradient(90deg, rgba(255, 163, 255, 0.2) 10%, rgba(0, 85, 178, 0.2) 90%); /* FF3.6+ */
-  background:     -ms-linear-gradient(90deg, rgba(255, 163, 255, 0.2) 10%, rgba(0, 85, 178, 0.2) 90%); /* IE10 */
-  background:      -o-linear-gradient(90deg, rgba(255, 163, 255, 0.2) 10%, rgba(0, 85, 178, 0.2) 90%); /* Opera 11.10+ */
-  background:         linear-gradient(90deg, rgba(255, 163, 255, 0.2) 10%, rgba(0, 85, 178, 0.2) 90%); /* W3C */
+  background: -webkit-linear-gradient(90deg, rgba(255, 163, 255, 0.4) 10%, rgba(0, 85, 178, 0.4) 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, rgba(255, 163, 255, 0.4) 10%, rgba(0, 85, 178, 0.4) 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, rgba(255, 163, 255, 0.4) 10%, rgba(0, 85, 178, 0.4) 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, rgba(255, 163, 255, 0.4) 10%, rgba(0, 85, 178, 0.4) 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, rgba(255, 163, 255, 0.4) 10%, rgba(0, 85, 178, 0.4) 90%); /* W3C */
 }
 
 
@@ -35,6 +35,7 @@ html, body, .vs-container {
 	width: 80%;
 	text-align: center;
 	-webkit-backface-visibility: hidden;
+	display: none;
 }
 
 .vs-nav {
@@ -240,11 +241,13 @@ html, body, .vs-container {
 
 .vs-sidenav div {
 	position: fixed;
-	top: 50%;
-	z-index: 500;
-	width: 80px;
-	height: 80px;
 	cursor: pointer;
+	top: 0;
+	display: block;
+	height: 100%;
+	@include side-gradient;
+	z-index: 500;
+	width: 10%;
 }
 
 .vs-sidenav div:after {
@@ -255,14 +258,19 @@ html, body, .vs-container {
 	font-size: 8em;
 	font-weight: 300;
 	color: white;
+	position: fixed;
+	top: 50%;
+	width: 80px;
+	height: 80px;
+	cursor: pointer;
 }
 
 .vs-sidenav .vs-sidenav-left {
-	left: 30px;
+	left: 0px;
 }
 
 .vs-sidenav .vs-sidenav-right {
-	right: 30px;
+	right: 0px;
 }
 
 .vs-sidenav .vs-sidenav-left:after {
@@ -271,16 +279,27 @@ html, body, .vs-container {
 
 .vs-sidenav .vs-sidenav-right:after {
 	content: '>';
+	left: auto;
+	right: 0;
 }
 
 /* inner content */
 .vs-content {
 	position: relative;
 	margin: auto;
-	padding: 1em 1em;
-	width: 95%;
+	// padding: 1em 5em;
+	padding: 1em;
+	width: 80%;
 	text-align: left;
 	font-size: 1.5em;
+	opacity: 0;
+	transition: all 0.2s ease;
+}
+
+.vs-current {
+	.vs-content {
+		opacity: 1;
+	}
 }
 
 .vs-content .col {
@@ -355,6 +374,12 @@ html, body, .vs-container {
 		-webkit-column-count: auto;
 		-moz-column-count: auto;
 		column-count: auto;
+	}
+
+	.vs-sidenav div:after {
+		font-size: 2em;
+		width: 30px;
+		height: 30px;
 	}
 }
 

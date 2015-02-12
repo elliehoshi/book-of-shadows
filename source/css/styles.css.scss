@@ -130,10 +130,9 @@ a {
   &.white {
     margin-left: -36px;
     width: auto;
-    z-index: 3;
   }
   &.black {
-    z-index: 2;
+    z-index: 650;
   }
 }
 
