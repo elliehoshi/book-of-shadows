@@ -120,8 +120,9 @@ a {
 }
 
 .menu-icon {
+  box-sizing: border-box;
   width: auto;
-  height: 100px;
+  height: 140px;
   padding: 20px;
   position: absolute;
   top: 0px;

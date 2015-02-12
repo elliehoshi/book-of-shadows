@@ -12,7 +12,7 @@ title: Book of Shadows
     <h5 class="home-issue-header">ISSUE 01</h5>
     <% data.zine.artists.each do |artist| %> 
       <div class="artist-name-contain">
-        <h1 class="artist-name"><%= link_to artist.artist.upcase, artist.path %></h1>
+        <h1 class="artist-name"><%= link_to artist.artist.upcase, '/book-of-shadows/articles' %></h1>
       </div>
     <% end %>
   </div>
