@@ -2,11 +2,11 @@
 mixins - refactor
 -----------------------------------------*/
 @mixin side-gradient {
-  background: -webkit-linear-gradient(90deg, rgba(255, 163, 255, 0.4) 10%, rgba(0, 85, 178, 0.4) 90%); /* Chrome 10+, Saf5.1+ */
-  background:    -moz-linear-gradient(90deg, rgba(255, 163, 255, 0.4) 10%, rgba(0, 85, 178, 0.4) 90%); /* FF3.6+ */
-  background:     -ms-linear-gradient(90deg, rgba(255, 163, 255, 0.4) 10%, rgba(0, 85, 178, 0.4) 90%); /* IE10 */
-  background:      -o-linear-gradient(90deg, rgba(255, 163, 255, 0.4) 10%, rgba(0, 85, 178, 0.4) 90%); /* Opera 11.10+ */
-  background:         linear-gradient(90deg, rgba(255, 163, 255, 0.4) 10%, rgba(0, 85, 178, 0.4) 90%); /* W3C */
+  background: -webkit-linear-gradient(90deg, rgba(255, 163, 255, 0.35) 10%, rgba(0, 85, 178, 0.35) 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, rgba(255, 163, 255, 0.35) 10%, rgba(0, 85, 178, 0.35) 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, rgba(255, 163, 255, 0.35) 10%, rgba(0, 85, 178, 0.35) 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, rgba(255, 163, 255, 0.35) 10%, rgba(0, 85, 178, 0.35) 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, rgba(255, 163, 255, 0.35) 10%, rgba(0, 85, 178, 0.35) 90%); /* W3C */
 }
 
 
@@ -304,7 +304,8 @@ html, body, .vs-container {
 
 .vs-content .col {
 	margin: 0 auto;
-	line-height: 1.4;
+	margin-top: 50px;
+	line-height: 30px;
 	-webkit-column-width: 30%;
 	-moz-column-width: 30%;
 	column-width: 30%;

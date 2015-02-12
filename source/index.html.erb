@@ -12,6 +12,7 @@ title: Book of Shadows
     <h5 class="home-issue-header">ISSUE 01</h5>
     <% data.zine.artists.each do |artist| %> 
       <div class="artist-name-contain">
+      <!-- TODO link artists to index in array for current -->
         <h1 class="artist-name"><%= link_to artist.artist.upcase, '/book-of-shadows/articles' %></h1>
       </div>
     <% end %>

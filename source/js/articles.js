@@ -125,6 +125,7 @@
 
 					classie.remove( container, 'vs-move-' + invDir );
 					isAnimating = false;
+					console.log("current", current);
 				}
 
 				nextSection.addEventListener( transEndEventName, onTransitionEndFn );
