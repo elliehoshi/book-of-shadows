@@ -18,12 +18,12 @@
 	}
 
 	function init() {
-
 		var container = document.getElementById( 'vs-container' ),
 			wrapper = container.querySelector( 'div.vs-wrapper' ),
 			sections = Array.prototype.slice.call( wrapper.querySelectorAll( 'section' ) ),
 			links = Array.prototype.slice.call( container.querySelectorAll( 'header.vs-header > ul.vs-nav > li' ) ),
 			sectionsCount = sections.length,
+			selectedArtistLink = parseInt(window.location.href.split('-').pop()),
 			transEndEventNames = {
 				'WebkitTransition': 'webkitTransitionEnd',
 				'MozTransition': 'transitionend',
@@ -36,9 +36,12 @@
 
 		// add navigation elements
 		if( sectionsCount >= 3 && Modernizr.csstransforms3d ) {
-			var current = 0,
+			console.log('huhuh');
+			var current = (selectedArtistLink - 1),
 				isAnimating = false;
+				console.log(current, selectedArtistLink, "sectionsCount", sectionsCount);
 
+			// current = selectedArtistLink-1;
 			classie.add( container, 'vs-triplelayout' );
 
 			function createNavigation() {
@@ -79,6 +82,7 @@
 				var l = current === 0 ? sectionsCount - 1 : current - 1,
 					r = current < sectionsCount - 1 ? current + 1 : 0,
 					nextE;
+					console.log("l", l, "r", r);
 
 				if( dir === 'right' ) {
 					nextE = r < sectionsCount - 1 ? r + 1 : 0;
@@ -131,14 +135,59 @@
 				nextSection.addEventListener( transEndEventName, onTransitionEndFn );
 			}
 
+			// end of the sections
+			var nextRightSection;
+			if(selectedArtistLink === sectionsCount) {
+				nextRightSection = sections[0];
+			} else {
+				nextRightSection = sections[ current + 1 ];
+			}
+
+			// end of the sections
+			var nextLeftSection;
+			if(selectedArtistLink === 1) {
+				nextLeftSection = sections[ sectionsCount - 1 ];
+			} else {
+				nextLeftSection = sections[ current - 1 ];
+			}
+
+
+
+
+
+
+
+
+			// end of the sections
+			var nextRightLink;
+			if(selectedArtistLink === sectionsCount) {
+				nextRightLink = links[0];
+			} else {
+				nextRightLink = links[ current + 1 ];
+			}
+
+			// end of the sections
+			var nextLeftLink;
+			if(selectedArtistLink === 1) {
+				nextLeftLink = links[ sectionsCount - 1 ];
+			} else {
+				nextLeftLink = links[ current - 1 ];
+			}
+
+
+
+
+
+
 			// assign the current, left and right classes to the respective sections
 			classie.add( sections[ current ], 'vs-current' );
-			classie.add( sections[ current + 1 ], 'vs-right' );
-			classie.add( sections[ sectionsCount - 1 ], 'vs-left' );
+			classie.add( nextRightSection, 'vs-right' );
+			classie.add( nextLeftSection, 'vs-left' );
 			// same for the header links
+
 			classie.add( links[ current ], 'vs-nav-current' );
-			classie.add( links[ current + 1 ], 'vs-nav-right' );
-			classie.add( links[ sectionsCount - 1 ], 'vs-nav-left' );
+			classie.add( nextRightLink, 'vs-nav-right' );
+			classie.add( nextLeftLink, 'vs-nav-left' );
 
 			// create navigation structure
 			createNavigation();

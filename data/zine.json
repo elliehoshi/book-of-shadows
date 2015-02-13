@@ -2,21 +2,21 @@
 	"artists": [
 		{
 			"artist":"artist-1",
-      "path":"artists/artist-1",
+      "path":"articles/#artist-1",
 			"image": {
 				"url":"https://ununsplash.imgix.net/photo-1415904663467-dfdc16cae794?q=75&fm=jpg&s=9687915831b6fd40e033578351e1f6d4"
 			}
 		},
     {
       "artist":"artist-2",
-      "path":"artists/artist-2",
+      "path":"articles/#artist-2",
       "image": {
         "url":"https://ununsplash.imgix.net/photo-1415201179613-bd037ff5eb29?q=75&fm=jpg&s=750bf3cbc777d5e274b76dc9d30b4925"
       }
     },
     {
       "artist":"artist-3",
-      "path":"artists/artist-3",
+      "path":"articles/#artist-3",
       "image": {
         "url":"https://ununsplash.imgix.net/photo-1415201179613-bd037ff5eb29?q=75&fm=jpg&s=750bf3cbc777d5e274b76dc9d30b4925"
       }

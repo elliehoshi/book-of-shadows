@@ -13,7 +13,9 @@ title: Book of Shadows
     <% data.zine.artists.each do |artist| %> 
       <div class="artist-name-contain">
       <!-- TODO link artists to index in array for current -->
-        <h1 class="artist-name"><%= link_to artist.artist.upcase, '/book-of-shadows/articles' %></h1>
+        <h1 class="artist-name"><%= link_to artist.artist.upcase, artist.path %></h1>
+
+        <!-- <h1 class="artist-name" onclick="clickLink()"><%#= link_to artist.artist.upcase, '/book-of-shadows/articles' %></h1> -->
       </div>
     <% end %>
   </div>
