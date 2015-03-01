@@ -22,9 +22,11 @@ var animateInSvgLogo = function(){
 $(document).ready(function(){
   $( ".bs-logo" ).hover(
     function() {
-      $(".home-menu").slideDown("slow");
+      $(".home-menu").fadeIn("slow");
+      animateOutSvgLogo();
     }, function() {
-      $(".home-menu").slideUp("slow");
+      $(".home-menu").fadeOut("slow");
+      animateInSvgLogo();
     }
   );
 
