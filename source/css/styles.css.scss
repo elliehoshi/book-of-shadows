@@ -9,21 +9,25 @@ mixins
       transform: translateY(-50%);
 }
 
+$bs-pink: #ffa3ff;
+$bs-blue: #54a4db;
+$bs-dark-pink: darken($bs-pink, 10%);
+$bs-dark-blue: darken($bs-blue, 10%);
+
 @mixin home-gradient {
-  background: -webkit-linear-gradient(30deg, #54a4db 20%, #ffa3ff 90%); /* Chrome 10+, Saf5.1+ */
-  background:    -moz-linear-gradient(30deg, #54a4db 20%, #ffa3ff 90%); /* FF3.6+ */
-  background:     -ms-linear-gradient(30deg, #54a4db 20%, #ffa3ff 90%); /* IE10 */
-  background:      -o-linear-gradient(30deg, #54a4db 20%, #ffa3ff 90%); /* Opera 11.10+ */
-  background:         linear-gradient(30deg, #54a4db 20%, #ffa3ff 90%); /* W3C */
+  background: -webkit-linear-gradient(30deg, $bs-blue 20%, $bs-pink 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(30deg, $bs-blue 20%, $bs-pink 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(30deg, $bs-blue 20%, $bs-pink 90%); /* IE10 */
+  background:      -o-linear-gradient(30deg, $bs-blue 20%, $bs-pink 90%); /* Opera 11.10+ */
+  background:         linear-gradient(30deg, $bs-blue 20%, $bs-pink 90%); /* W3C */
 }
 
-
 @mixin side-gradient {
-  background: -webkit-linear-gradient(90deg, #ffa3ff 10%, #54a4db 90%); /* Chrome 10+, Saf5.1+ */
-  background:    -moz-linear-gradient(90deg, #ffa3ff 10%, #54a4db 90%); /* FF3.6+ */
-  background:     -ms-linear-gradient(90deg, #ffa3ff 10%, #54a4db 90%); /* IE10 */
-  background:      -o-linear-gradient(90deg, #ffa3ff 10%, #54a4db 90%); /* Opera 11.10+ */
-  background:         linear-gradient(90deg, #ffa3ff 10%, #54a4db 90%); /* W3C */
+  background: -webkit-linear-gradient(90deg, $bs-pink 10%, $bs-blue 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, $bs-pink 10%, $bs-blue 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, $bs-pink 10%, $bs-blue 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, $bs-pink 10%, $bs-blue 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, $bs-pink 10%, $bs-blue 90%); /* W3C */
 }
 
 
@@ -56,6 +60,33 @@ mixins
     from { opacity: 0; }
     to   { opacity: 1; }
 }​
+
+.scalex {
+}
+    
+@-webkit-keyframes scalex{
+    from {-webkit-transform: scale(0.9);}
+    65% {-webkit-transform: scale(1.0);}
+    to {-webkit-transform: scale(0.9);}    
+}
+    
+@-moz-keyframes scale{
+    from {-moz-transform: scale(0.9);}
+    65% {-moz-transform: scale(1.0);}
+    to {-moz-transform: scale(0.9);}    
+}
+
+.scalex {
+  -webkit-animation-name: scalex;
+  -webkit-animation-duration:5s;
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-timing-function:ease-in;
+  -moz-animation-name: scale;
+  -moz-animation-duration:5s;
+  -moz-animation-iteration-count:infinite;
+  -moz-animation-timing-function:ease-in;
+  -webkit-transform-origin: 50% 50%;
+}
 
 /*-----------------------------------------
 Body
@@ -113,29 +144,30 @@ a {
     100%{background-position:0% 68%}
 }
 
-.home-logo {
+//new
+
+.home-body-center {
   @include vertical-align;
-  height: auto;
-  width: 300px;
+  padding: 40px 0 40px 0;
+  text-align: center;
+  width: 50%;
+  min-width: 300px;
+  margin: 0 auto;
 }
 
-.menu-icon {
+.bs-logo {
   box-sizing: border-box;
-  width: auto;
-  height: 140px;
+  height: auto;
+  width: 100px;
   padding: 20px;
   position: absolute;
   top: 0px;
   left: 0px;
   cursor: pointer;
-  &.white {
-    margin-left: -36px;
-    width: auto;
-  }
-  &.black {
-    z-index: 650;
-  }
+  z-index: 650;
 }
+
+//end new
 
 .hidden {
   visibility: hidden;
@@ -150,7 +182,8 @@ a {
 
 .home-issue-header {
   text-align: left;
-  padding-left: 22px; 
+  padding-left: 22px;
+  color: white; 
 }
 
 .artist-name {
@@ -159,8 +192,9 @@ a {
   padding: 20px;
   padding-top: 0px;
   margin-top: 0px;
+  color: white;
   &:hover {
-    color: white;
+    color: magenta;
   }
 }
 
@@ -178,6 +212,7 @@ a {
 .home-menu {
   width: 200px;
   height: auto;
+  min-height: 100vh;
   padding-bottom: 50px;
   background-color: black;
   position: absolute;
