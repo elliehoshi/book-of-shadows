@@ -4,7 +4,7 @@ title: Book of Shadows
 
 <!-- Add your site or application content here -->
 <div class="gradient gradient-animate">
-  <%= partial "main-nav" %>
+<%= partial "main-nav" %>
   <section class="home-body-center">
     <%= partial "animated-gradient-content" %>
   </section>
@@ -14,7 +14,7 @@ title: Book of Shadows
     <% data.zine.artists.each do |artist| %> 
       <div class="artist-name-contain">
       <!-- TODO link artists to index in array for current -->
-        <h1 class="artist-name"><%= link_to artist.artist.upcase, artist.path %></h1>
+        <%= link_to image_tag(artist.symbol, :class => "artist-symbol" ), artist.path %>
       </div>
     <% end %>
   </div>

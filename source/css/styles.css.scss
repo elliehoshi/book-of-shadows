@@ -198,6 +198,19 @@ a {
   }
 }
 
+.artist-symbol {
+  display: inline-block;
+  width: auto;
+  height: 50px;
+  padding: 20px;
+  padding-top: 0px;
+  margin-top: 0px;
+  color: white;
+  &:hover {
+    color: magenta;
+  }
+}
+
 .artist-name-contain {
   display: inline-block;
   width: 33%;
