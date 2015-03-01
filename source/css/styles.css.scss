@@ -182,32 +182,24 @@ a {
 
 .home-issue-header {
   text-align: left;
-  padding-left: 22px;
+  padding-left: 32px;
   color: white; 
-}
-
-.artist-name {
-  display: inline-block;
-  width: auto;
-  padding: 20px;
-  padding-top: 0px;
-  margin-top: 0px;
-  color: white;
-  &:hover {
-    color: magenta;
-  }
 }
 
 .artist-symbol {
   display: inline-block;
-  width: auto;
-  height: 50px;
   padding: 20px;
   padding-top: 0px;
   margin-top: 0px;
+  margin-bottom: 40px;
   color: white;
+  height: 60px;
   &:hover {
     color: magenta;
+  }
+  img {
+    width: auto;
+    height: 60px;
   }
 }
 

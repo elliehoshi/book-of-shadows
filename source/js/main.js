@@ -36,7 +36,7 @@ $(document).ready(function(){
   });
 
 
-  $(".artist-name:eq(0)").hover(
+  $(".artist-symbol:eq(0)").hover(
     function(){
       $(".gradient").removeClass("gradient-animate");
       $(".gradient").addClass("artist-1");
@@ -46,7 +46,7 @@ $(document).ready(function(){
     }
   );
 
-  $(".artist-name:eq(1)").hover(
+  $(".artist-symbol:eq(1)").hover(
     function(){
       $(".gradient").removeClass("gradient-animate");
       $(".gradient").addClass("artist-2");
@@ -56,7 +56,7 @@ $(document).ready(function(){
     }
   );
 
-  $(".artist-name:eq(2)").hover(
+  $(".artist-symbol:eq(2)").hover(
     function(){
       $(".gradient").removeClass("gradient-animate");
       $(".gradient").addClass("artist-3");
