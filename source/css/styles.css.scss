@@ -210,8 +210,11 @@ a {
 /*-----------------------------------------
 Menu
 -----------------------------------------*/
+.menu-icon {
+  z-index: 600;
+}
+
 nav {
-  // float:left;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -228,14 +231,13 @@ nav ul li ul {
   border-right: 1px solid white;
   padding-bottom: 50px;
   padding-top: 120px;
-  padding-left: 30px;
+  padding-left: 0px;
   height: 100vh;
   text-align: left;
 }
 nav ul li ul li {
   margin:0;
-  padding-left: 0px;
-  padding:0;
+  padding-left: 30px;
 }
 nav ul li ul li a {
   display:block;
@@ -277,8 +279,9 @@ Artists
 
 .artist-header {
   position: absolute;
-  bottom: 20px;
+  bottom: 0px;
   left: 100px;
+  text-decoration: underline;
 }
 
 .article-body {
@@ -293,21 +296,5 @@ Artists
     line-height: 30px;
     text-align: left; 
     height: auto; 
-  }
-}
-
-.page-next {
-  position: fixed;
-  top: 0px;
-  height: 100vh;
-  min-height: 100px; 
-  width: 75px;
-  opacity: 0.5;
-  @include side-gradient;
-  &.left {
-    left: 0px;
-  }
-  &.right {
-    right: 0px;
   }
 }
