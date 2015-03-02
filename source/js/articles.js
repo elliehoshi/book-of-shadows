@@ -36,7 +36,6 @@
 
 		// add navigation elements
 		if( sectionsCount >= 3 && Modernizr.csstransforms3d ) {
-			console.log('huhuh');
 			var current = (selectedArtistLink - 1),
 				isAnimating = false;
 				console.log(current, selectedArtistLink, "sectionsCount", sectionsCount);

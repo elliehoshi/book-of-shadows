@@ -145,13 +145,16 @@ a {
   position: absolute;
 }
 
-.home-body-center {
+.body-center {
   @include vertical-align;
   padding: 40px 0 40px 0;
   text-align: center;
   width: 50%;
   min-width: 300px;
   margin: 0 auto;
+  &.info-body {
+    color: white;
+  }
 }
 
 .bs-logo {
@@ -227,8 +230,6 @@ nav ul li ul {
   margin-top: 0px;
   width: 200px;
   background:black;
-  border-bottom: 1px solid white;
-  border-right: 1px solid white;
   padding-bottom: 50px;
   padding-top: 120px;
   padding-left: 0px;
@@ -251,6 +252,12 @@ nav ul li ul li:hover a {
 /*-----------------------------------------
 Artists
 -----------------------------------------*/
+.article-white-logo {
+  width: 150px;
+  height: auto;
+  margin-top: 25px;
+}
+
 .artist-hero {
   position: relative;
   width: 100%;
@@ -281,7 +288,7 @@ Artists
   position: absolute;
   bottom: 0px;
   left: 100px;
-  text-decoration: underline;
+  border-bottom: 3px solid white;
 }
 
 .article-body {

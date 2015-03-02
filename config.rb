@@ -28,10 +28,10 @@ page "/articles/index.html", :layout => "articles"
 # proxy "/this-page-has-no-template.html", "/template-file.html", :locals => {
 #  :which_fake_page => "Rendering a fake page with a local variable" }
 
-# data.zine.artists.each do |artists|
-#   artist = artists[:artist]
-#   proxy "/artists/#{artist}.html", "/artists/template.html", :locals => { :artists => artists, :artist => artist }, :ignore => true
-# end
+data.info.sections.each do |sections|
+  title = sections[:title]
+  proxy "/info/#{title}.html", "/info-pages/template.html", :locals => { :sections => sections, :title => title }, :ignore => true
+end
 
 ###
 # Helpers
