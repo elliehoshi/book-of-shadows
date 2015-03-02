@@ -30,6 +30,9 @@ $bs-dark-blue: darken($bs-blue, 10%);
   background:         linear-gradient(90deg, $bs-pink 10%, $bs-blue 90%); /* W3C */
 }
 
+/*-----------------------------------------
+animations
+-----------------------------------------*/
 
 .fade-in {
     -webkit-animation: fadein 1.5s; /* Safari and Chrome */
@@ -61,8 +64,34 @@ $bs-dark-blue: darken($bs-blue, 10%);
     to   { opacity: 1; }
 }​
 
-.scalex {
+.gradient-animate {
+  -webkit-animation: GradientAnimation 10s ease alternate infinite;
+  -moz-animation: GradientAnimation 10s ease alternate infinite;
+  -o-animation: GradientAnimation 10s ease alternate infinite;
+  animation: GradientAnimation 10s ease alternate infinite;
 }
+
+@-webkit-keyframes GradientAnimation {
+    0%{background-position:0% 68%}
+    50%{background-position:100% 33%}
+    100%{background-position:0% 68%}
+}
+@-moz-keyframes GradientAnimation {
+    0%{background-position:0% 68%}
+    50%{background-position:100% 33%}
+    100%{background-position:0% 68%}
+}
+@-o-keyframes GradientAnimation {
+    0%{background-position:0% 68%}
+    50%{background-position:100% 33%}
+    100%{background-position:0% 68%}
+}
+@keyframes GradientAnimation { 
+    0%{background-position:0% 68%}
+    50%{background-position:100% 33%}
+    100%{background-position:0% 68%}
+}
+
     
 @-webkit-keyframes scalex{
     from {-webkit-transform: scale(0.9);}
@@ -116,36 +145,6 @@ a {
   position: absolute;
 }
 
-.gradient-animate {
-  -webkit-animation: GradientAnimation 10s ease alternate infinite;
-  -moz-animation: GradientAnimation 10s ease alternate infinite;
-  -o-animation: GradientAnimation 10s ease alternate infinite;
-  animation: GradientAnimation 10s ease alternate infinite;
-}
-
-@-webkit-keyframes GradientAnimation {
-    0%{background-position:0% 68%}
-    50%{background-position:100% 33%}
-    100%{background-position:0% 68%}
-}
-@-moz-keyframes GradientAnimation {
-    0%{background-position:0% 68%}
-    50%{background-position:100% 33%}
-    100%{background-position:0% 68%}
-}
-@-o-keyframes GradientAnimation {
-    0%{background-position:0% 68%}
-    50%{background-position:100% 33%}
-    100%{background-position:0% 68%}
-}
-@keyframes GradientAnimation { 
-    0%{background-position:0% 68%}
-    50%{background-position:100% 33%}
-    100%{background-position:0% 68%}
-}
-
-//new
-
 .home-body-center {
   @include vertical-align;
   padding: 40px 0 40px 0;
@@ -167,39 +166,33 @@ a {
   z-index: 650;
 }
 
-//end new
-
 .hidden {
   visibility: hidden;
 }
 
 .home-bottom-panel {
-  width: 100%;
+  width: 96%;
   position: absolute;
   bottom: 0px;
   left: 0px;
+  right: 0px;
+  margin: 0 20px 20px 20px;
 }
 
 .home-issue-header {
   text-align: left;
-  padding-left: 32px;
+  padding-left: 12px;
   color: white; 
 }
 
 .artist-symbol {
   display: inline-block;
-  padding: 20px;
-  padding-top: 0px;
-  margin-top: 0px;
-  margin-bottom: 40px;
   color: white;
-  height: 60px;
-  &:hover {
-    color: magenta;
-  }
+  height: 50px;
+  padding: 5px;
   img {
     width: auto;
-    height: 60px;
+    height: 50px;
   }
 }
 
@@ -217,29 +210,40 @@ a {
 /*-----------------------------------------
 Menu
 -----------------------------------------*/
-.home-menu {
-  width: 200px;
-  height: auto;
-  min-height: 100vh;
-  padding-bottom: 50px;
-  background-color: black;
+nav {
+  // float:left;
   position: absolute;
   top: 0px;
   left: 0px;
-  display: none;
-  color: white;
+  z-index: 600;
+}
+nav ul li ul {
+  top: 0px;
+  left: 0px;
+  position:absolute;
+  margin-top: 0px;
+  width: 200px;
+  background:black;
   border-bottom: 1px solid white;
   border-right: 1px solid white;
-  z-index: 600;
-  ul {
-    list-style: none;
-    margin-top: 150px;
-    text-align: left;
-    padding-left: 30px;
-    li {
-      margin-top: 20px; 
-    }
-  }
+  padding-bottom: 50px;
+  padding-top: 120px;
+  padding-left: 30px;
+  height: 100vh;
+  text-align: left;
+}
+nav ul li ul li {
+  margin:0;
+  padding-left: 0px;
+  padding:0;
+}
+nav ul li ul li a {
+  display:block;
+  padding:15px 0px;
+  color:white;
+}
+nav ul li ul li:hover a {
+  color:magenta;
 }
 
 /*-----------------------------------------

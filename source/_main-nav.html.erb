@@ -1,13 +1,16 @@
-<%= partial "bs-logo-icon", :class => "menu-icon" %>
-<div class="home-menu">
-<ul>
-<!-- fix link later -->
-  <li><%=link_to 'HOME', '/book-of-shadows' %></li>
-  <!-- <li><%#=link_to 'HOME', '/' %></li> -->
-  <li>MANIFESTO</li>
- <!-- fix link later -->
-  <li><%=link_to 'ISSUES', '/book-of-shadows/articles' %></li>
-  <li><%=link_to 'CONTACT', '/articles/#artist-1' %></li>
-  <li><%=link_to 'TUMBLR', '/articles/#artist-2' %></li>
-</ul>
-</div>
+<nav>
+	<ul>
+		<li>
+			<a href="#">
+				<%= partial "bs-logo-icon", :class => "menu-icon" %>
+			</a>
+			<ul>
+				<li><%=link_to 'HOME', '/book-of-shadows' %></li>
+				<li><%=link_to 'MANIFESTO', '#' %></li>
+				<li><%=link_to 'ISSUES', '/book-of-shadows/articles' %></li>
+				<li><%=link_to 'CONTACT', '#' %></li>
+				<li><%=link_to 'TUMBLR', '#' %></li>
+			</ul>
+		</li>
+	</ul>
+</nav>
